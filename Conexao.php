@@ -11,10 +11,10 @@
 
 	public function __construct() {
 		
-		$this->host = "127.0.0.1:3306";
-		$this->db = "mydb";
-		$this->login = "root";
-		$this->senha = "";
+		$this->host = "ufnprojetoacad.mysql.dbaas.com.br:5432";
+		$this->db = "ufnprojetoacad";
+		$this->login = "ufnprojetoacad";
+		$this->senha = "ufnprojetoacad";
 		
 		if (mysqli_connect_error()) {
             die('Connect Error (' . mysqli_connect_errno() . ') '
@@ -25,10 +25,10 @@
 	
 	public function select($f){
 		$pesquisar = $f;
-		$servidor = "localhost";
-		$usuario = "root";
-		$senha = "";
-		$dbname = "mydb";
+		$host = "ufnprojetoacad.mysql.dbaas.com.br:5432";
+		$db = "ufnprojetoacad";
+		$login = "ufnprojetoacad";
+		$senha = "ufnprojetoacad";
 		//Criar a conexao
 		$link2 = mysqli_connect($servidor, $usuario, $senha, $dbname);
 		$query2 = "SELECT * FROM treino WHERE nomeAluno LIKE '%$pesquisar%' LIMIT 5";
@@ -51,10 +51,10 @@
 	
 	public function select2($f){
 		$pesquisar = $f;
-		$servidor = "localhost";
-		$usuario = "root";
-		$senha = "";
-		$dbname = "mydb";
+		$host = "ufnprojetoacad.mysql.dbaas.com.br:5432";
+		$db = "ufnprojetoacad";
+		$login = "ufnprojetoacad";
+		$senha = "ufnprojetoacad";
 		//Criar a conexao
 		$link3 = mysqli_connect($servidor, $usuario, $senha, $dbname);
 		$query3 = "SELECT s.idserioe,s.nome,s.exercicio,s.tempoTotal,s.tempoParcial,s.tempoMedio,s.tempoMinimo,s.Repeticoes,s.treino_idtreino FROM serie AS s INNER JOIN treino AS t ON (t.nomeAluno = '".$pesquisar."') = s.idserioe LIMIT 5";
